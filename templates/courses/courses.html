@@ -8,8 +8,8 @@
 
 {% block content %}
    <div class="layout">
-
-        <div class="sidebar">
+        {% include 'includes/sidebar.html' %}
+        {% comment %} <div class="sidebar">
             <div class="logo">
                 <img src="{% static 'images/devilearn.png' %}" alt="Logo">
             </div>
@@ -28,13 +28,14 @@
                 <li><a class="menu-option" href="#"><i class="fa-solid fa-gear icon"></i><span>Configuración</span></a>
                 </li>
             </ul>
-        </div>
+        </div> {% endcomment %}
 
 
         <!-- Main content -->
         <div class="main-content">
             <!-- Header -->
-            <div class="header">
+            {% include 'includes/header.html' %}
+            {% comment %} <div class="header">
                 <div class="search-box">
                     <i class="fa-solid fa-magnifying-glass icon"></i>
                     <input type="text" placeholder="Buscar..." />
@@ -44,7 +45,7 @@
                         <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="User" />
                     </div>
                 </div>
-            </div>
+            </div> {% endcomment %}
             <!-- Aquí va el contenido de la página -->
             <main>
                 <!-- === COURSE CARDS === -->
@@ -53,29 +54,30 @@
                     <div class="course-grid">
                         <div class="course-grid">
                             <!-- Card 1 -->
-                            <div class="course-card">
-                                <a href="{% url 'course_detail' %}">
-                                    <img src="{% static 'images/curso_1.jpg' %}" alt="Course Image" class="course-img" />
-                                    <div class="course-info">
-                                        <div class="course-rating">
-                                            <span class="tag beginner">Beginner</span>
-                                            <div class="course-meta">
-                                                <span><i class="fa-solid fa-star"></i> 5.0</span>
+                            
+                            {% for course in courses%}
+                            
+                                <div class="course-card">
+                                    <a href="{% url 'course_detail' %}">
+                                        <img src="{% static course.course_image %}" alt="Course Image" class="course-img" />
+                                        <div class="course-info">
+                                            <div class="course-rating">
+                                                <span class="tag beginner">{{course.level}}</span>
+                                                <div class="course-meta">
+                                                    <span><i class="fa-solid fa-star"></i> {{course.rating}}</span>
+                                                </div>
                                             </div>
+
+                                            <h3 class="course-title">{{course.course_title}}</h3>
+                                            <div class="author"><img src="{{course.instructor_image}}"
+                                                    alt=""><span>{{course.instructor}}</span></div>
                                         </div>
 
-                                        <h3 class="course-title">Three-month Course to Learn the Basics of Python and
-                                            Start
-                                            Coding.
-                                        </h3>
-                                        <div class="author"><img src="https://randomuser.me/api/portraits/women/68.jpg"
-                                                alt=""><span>Alison Walsh</span></div>
-                                    </div>
+                                    </a>
+                                </div>
+                            {% endfor %}
 
-                                </a>
-                            </div>
-
-                            <!-- Card 2 -->
+                            {% comment %} <!-- Card 2 -->
                             <div class="course-card">
                                 <a href="{% url 'course_detail' %}">
                                     <img src="{% static 'images/curso_2.jpg' %}" alt="Course Image" class="course-img" />
@@ -141,7 +143,7 @@
                                     </div>
 
                                 </a>
-                            </div>
+                            </div> {% endcomment %}
                         </div>
                     </div>
                 </div>
