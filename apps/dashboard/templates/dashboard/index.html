@@ -1,0 +1,51 @@
+{% extends "includes/base.html" %}
+
+{% load static %} 
+{% block title %}Dashboard{% endblock %}
+{% block custom_styles %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% endblock  %}
+
+{% block content %}
+
+    <div class="layout">
+
+     {% include 'includes/sidebar.html' %}
+
+        <!-- Main content -->
+        <div class="main-content">
+            <!-- Header -->
+            {% include 'includes/header.html' %}
+            <!-- Aquí va el contenido de la página -->
+            <main>
+                <h1>¡Hola, Ricardo!</h1>
+                <p></p>
+                <section class="content">
+                    <div class="cards">
+                        <a href="">
+                            <div class="card">
+                                <h3>Continuar viendo</h3>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="card">
+                                <h3>Cursos </h3>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="card">
+                                <h3>Perfil</h3>
+                            </div>
+                        </a>
+
+
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+{% endblock %}
+
+{% block custom_scripts %}
+    <script src="{% static 'js/scripts.js' %}"></script>
+{% endblock  %}

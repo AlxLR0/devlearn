@@ -163,7 +163,7 @@ video {
 
 .btn-complete {
     background: #1e1e1e;
-    color: white;
+    color: rgb(255, 255, 255);
     border: none;
     padding: 0.6rem 1.2rem;
     border-radius: 6px;

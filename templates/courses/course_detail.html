@@ -71,7 +71,7 @@
                     <div class="course-info-card">
                         <div class="card-banner">
                             <div class="tag">{devlearn}</div>
-                            <img src="https://placehold.co/600x200/1e1e1e/ffffff?text=django" alt="Curso Django" />
+                            <img src="{% static course.course_image %}" alt="Curso Django" />
                             <img class="author-avatar" src="https://randomuser.me/api/portraits/men/15.jpg" alt="Autor">
                         </div>
                         <div class="card-body">
@@ -81,7 +81,7 @@
                                 <li><i class="fa-solid fa-video"></i> {{course.info_course.duration}} horas de contenido en video</li>
                                 <li><i class="fa-solid fa-graduation-cap"></i>Instructor: {{course.info_course.instructor}}</li>
                             </ul>
-                            <a class="btn bnt-primary btn-course" href="{{course.course_link}}">Continuar aprendiendo</a>
+                            <a class="btn bnt-primary btn-course" href="{%url course.course_link %}">Continuar aprendiendo</a>
 
                         </div>
                     </div>
