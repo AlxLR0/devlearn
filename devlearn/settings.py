@@ -123,3 +123,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
+
+#esto sirve para decirle a django que use nuestro modelo de usuario personalizado en vez del predeterminado
+#sin esto, django no sabra que modelo usar para las migraciones y dara error al hacer makemigrations o al registrarse un usuario
+AUTH_USER_MODEL = 'profiles.User'
