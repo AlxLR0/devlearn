@@ -70,18 +70,20 @@
                     <!-- Card lateral -->
                     <div class="course-info-card">
                         <div class="card-banner">
-                            <div class="tag">{devlearn}</div>
-                            <img src="{% static course.course_image %}" alt="Curso Django" />
-                            <img class="author-avatar" src="https://randomuser.me/api/portraits/men/15.jpg" alt="Autor">
+                            <div class="tag">{{course.level}}</div>
+                            <img src="{{ course.image }}" alt="{{ course.title }}" />
+                            <img class="author-avatar" src="{{ course.owner.instructor_profile.photo }}" alt="Autor">
                         </div>
                         <div class="card-body">
+                            <h2>{{course.title}}</h2><br>
+                            <hr>
                             <h3>Acerca de este curso</h3>
                             <ul class="course-details">
-                                <li><i class="fa-solid fa-file"></i> {{course.info_course.lessons}} lecciones</li>
-                                <li><i class="fa-solid fa-video"></i> {{course.info_course.duration}} horas de contenido en video</li>
-                                <li><i class="fa-solid fa-graduation-cap"></i>Instructor: {{course.info_course.instructor}}</li>
+                                <li><i class="fa-solid fa-file"></i> {{ total_contents }} lecciones</li>
+                                <li><i class="fa-solid fa-video"></i> {{ course.duration }} horas de contenido</li>
+                                <li><i class="fa-solid fa-graduation-cap"></i> Instructor: {{ course.owner.get_full_name|default:course.owner.username }}</li>
                             </ul>
-                            <a class="btn bnt-primary btn-course" href="{%url course.course_link %}">Continuar aprendiendo</a>
+                            <a class="btn bnt-primary btn-course" href="{% url 'course_lessons' slug=course.slug %}">Continuar aprendiendo</a>
 
                         </div>
                     </div>

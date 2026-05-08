@@ -89,9 +89,9 @@
             "overview": "Curso sobre Introducción a HTML desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/gG1fvaYXRNmKMJTaMHYP_PYTHON-COVER%20(1).jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Principiante",
+            "rating": 4.5,
+            "duration": 5.5
         }
     },
     {
@@ -104,9 +104,9 @@
             "overview": "Curso sobre CSS desde cero desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/gG1fvaYXRNmKMJTaMHYP_PYTHON-COVER%20(1).jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Principiante",
+            "rating": 4.8,
+            "duration": 6.0
         }
     },
     {
@@ -119,9 +119,9 @@
             "overview": "Curso sobre JavaScript moderno desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/gG1fvaYXRNmKMJTaMHYP_PYTHON-COVER%20(1).jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.2,
+            "duration": 12.5
         }
     },
     {
@@ -134,9 +134,9 @@
             "overview": "Curso sobre React para principiantes desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/gG1fvaYXRNmKMJTaMHYP_PYTHON-COVER%20(1).jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Principiante",
+            "rating": 4.9,
+            "duration": 8.0
         }
     },
     {
@@ -149,9 +149,9 @@
             "overview": "Curso sobre Vue.js práctico desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/gG1fvaYXRNmKMJTaMHYP_PYTHON-COVER%20(1).jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.6,
+            "duration": 9.5
         }
     },
     {
@@ -164,9 +164,9 @@
             "overview": "Curso sobre Next.js profesional desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/gG1fvaYXRNmKMJTaMHYP_PYTHON-COVER%20(1).jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Avanzado",
+            "rating": 4.7,
+            "duration": 15.0
         }
     },
     {
@@ -179,9 +179,9 @@
             "overview": "Curso sobre Node.js y Express desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/gG1fvaYXRNmKMJTaMHYP_PYTHON-COVER%20(1).jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.4,
+            "duration": 10.0
         }
     },
     {
@@ -194,9 +194,9 @@
             "overview": "Curso sobre MongoDB completo desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/gG1fvaYXRNmKMJTaMHYP_PYTHON-COVER%20(1).jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.3,
+            "duration": 7.5
         }
     },
     {
@@ -209,9 +209,9 @@
             "overview": "Curso sobre PostgreSQL desde cero desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/gG1fvaYXRNmKMJTaMHYP_PYTHON-COVER%20(1).jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Principiante",
+            "rating": 4.6,
+            "duration": 8.5
         }
     },
     {
@@ -224,9 +224,9 @@
             "overview": "Curso sobre REST APIs con Django desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/gG1fvaYXRNmKMJTaMHYP_PYTHON-COVER%20(1).jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.8,
+            "duration": 14.0
         }
     },
     {
@@ -239,9 +239,9 @@
             "overview": "Curso sobre Flask intermedio desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/aA89gxXgTQGtRR7YojXB_DJANGO1.jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.5,
+            "duration": 6.5
         }
     },
     {
@@ -254,9 +254,9 @@
             "overview": "Curso sobre FastAPI para microservicios desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/aA89gxXgTQGtRR7YojXB_DJANGO1.jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.9,
+            "duration": 11.0
         }
     },
     {
@@ -269,9 +269,9 @@
             "overview": "Curso sobre Python para ciencia de datos desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/aA89gxXgTQGtRR7YojXB_DJANGO1.jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.7,
+            "duration": 18.5
         }
     },
     {
@@ -284,9 +284,9 @@
             "overview": "Curso sobre Pandas y NumPy desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/aA89gxXgTQGtRR7YojXB_DJANGO1.jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.4,
+            "duration": 9.0
         }
     },
     {
@@ -299,9 +299,9 @@
             "overview": "Curso sobre Análisis de datos con Python desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/aA89gxXgTQGtRR7YojXB_DJANGO1.jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.6,
+            "duration": 13.0
         }
     },
     {
@@ -314,9 +314,9 @@
             "overview": "Curso sobre Machine Learning con scikit-learn desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/aA89gxXgTQGtRR7YojXB_DJANGO1.jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.8,
+            "duration": 22.0
         }
     },
     {
@@ -329,9 +329,9 @@
             "overview": "Curso sobre Redes Neuronales con TensorFlow desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/aA89gxXgTQGtRR7YojXB_DJANGO1.jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.9,
+            "duration": 25.5
         }
     },
     {
@@ -344,9 +344,9 @@
             "overview": "Curso sobre Deep Learning en Keras desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/aA89gxXgTQGtRR7YojXB_DJANGO1.jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.5,
+            "duration": 20.0
         }
     },
     {
@@ -359,9 +359,9 @@
             "overview": "Curso sobre Docker y contenedores desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/TTTUJiUVTvGC5cy5Z3UW_COVER-DEVTALLES-REACT.jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.7,
+            "duration": 8.0
         }
     },
     {
@@ -374,9 +374,9 @@
             "overview": "Curso sobre Kubernetes para desarrolladores desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/TTTUJiUVTvGC5cy5Z3UW_COVER-DEVTALLES-REACT.jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.6,
+            "duration": 14.5
         }
     },
     {
@@ -389,9 +389,9 @@
             "overview": "Curso sobre Automatización con Python desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/TTTUJiUVTvGC5cy5Z3UW_COVER-DEVTALLES-REACT.jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.5,
+            "duration": 7.0
         }
     },
     {
@@ -404,9 +404,9 @@
             "overview": "Curso sobre Git y GitHub desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/TTTUJiUVTvGC5cy5Z3UW_COVER-DEVTALLES-REACT.jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Principiante",
+            "rating": 4.9,
+            "duration": 5.0
         }
     },
     {
@@ -419,9 +419,9 @@
             "overview": "Curso sobre JavaScript para backend desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/TTTUJiUVTvGC5cy5Z3UW_COVER-DEVTALLES-REACT.jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.4,
+            "duration": 12.0
         }
     },
     {
@@ -434,9 +434,9 @@
             "overview": "Curso sobre Curso de TypeScript desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/TTTUJiUVTvGC5cy5Z3UW_COVER-DEVTALLES-REACT.jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.6,
+            "duration": 10.5
         }
     },
     {
@@ -449,9 +449,9 @@
             "overview": "Curso sobre Desarrollo con Angular desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/TTTUJiUVTvGC5cy5Z3UW_COVER-DEVTALLES-REACT.jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.3,
+            "duration": 16.0
         }
     },
     {
@@ -464,9 +464,9 @@
             "overview": "Curso sobre Go para backend desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/dMU9FLDmQETZktVFX7gX_COVER-DEVTALLES3.jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.7,
+            "duration": 11.5
         }
     },
     {
@@ -479,9 +479,9 @@
             "overview": "Curso sobre Go avanzado desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/dMU9FLDmQETZktVFX7gX_COVER-DEVTALLES3.jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Avanzado",
+            "rating": 4.8,
+            "duration": 18.0
         }
     },
     {
@@ -494,9 +494,9 @@
             "overview": "Curso sobre Microservicios con Go desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/dMU9FLDmQETZktVFX7gX_COVER-DEVTALLES3.jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Avanzado",
+            "rating": 4.9,
+            "duration": 20.0
         }
     },
     {
@@ -509,9 +509,9 @@
             "overview": "Curso sobre Desarrollo iOS con Swift desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/dMU9FLDmQETZktVFX7gX_COVER-DEVTALLES3.jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.6,
+            "duration": 14.0
         }
     },
     {
@@ -524,9 +524,9 @@
             "overview": "Curso sobre Android con Kotlin desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/dMU9FLDmQETZktVFX7gX_COVER-DEVTALLES3.jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.5,
+            "duration": 15.5
         }
     },
     {
@@ -539,9 +539,9 @@
             "overview": "Curso sobre App híbridas con Flutter desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/dMU9FLDmQETZktVFX7gX_COVER-DEVTALLES3.jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.8,
+            "duration": 19.0
         }
     },
     {
@@ -554,9 +554,9 @@
             "overview": "Curso sobre Backend con Laravel desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/dMU9FLDmQETZktVFX7gX_COVER-DEVTALLES3.jpg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.7,
+            "duration": 13.5
         }
     },
     {
@@ -569,9 +569,9 @@
             "overview": "Curso sobre Curso completo de PHP desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/a51yLvxNTUiTs5FbiBsx_COVER-DEVTALLES2.jpeg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.2,
+            "duration": 17.0
         }
     },
     {
@@ -584,9 +584,9 @@
             "overview": "Curso sobre Sistemas distribuidos desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/a51yLvxNTUiTs5FbiBsx_COVER-DEVTALLES2.jpeg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Avanzado",
+            "rating": 4.9,
+            "duration": 28.0
         }
     },
     {
@@ -599,9 +599,9 @@
             "overview": "Curso sobre APIs GraphQL desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/a51yLvxNTUiTs5FbiBsx_COVER-DEVTALLES2.jpeg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.6,
+            "duration": 9.0
         }
     },
     {
@@ -614,9 +614,9 @@
             "overview": "Curso sobre Selenium y pruebas automatizadas desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/a51yLvxNTUiTs5FbiBsx_COVER-DEVTALLES2.jpeg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.5,
+            "duration": 12.5
         }
     },
     {
@@ -629,9 +629,9 @@
             "overview": "Curso sobre TDD con Django desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/a51yLvxNTUiTs5FbiBsx_COVER-DEVTALLES2.jpeg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Avanzado",
+            "rating": 4.8,
+            "duration": 10.0
         }
     },
     {
@@ -644,9 +644,9 @@
             "overview": "Curso sobre CI/CD con GitHub Actions desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/a51yLvxNTUiTs5FbiBsx_COVER-DEVTALLES2.jpeg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.7,
+            "duration": 6.5
         }
     },
     {
@@ -659,9 +659,9 @@
             "overview": "Curso sobre Despliegue con Heroku desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/a51yLvxNTUiTs5FbiBsx_COVER-DEVTALLES2.jpeg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Intermedio",
+            "rating": 4.4,
+            "duration": 5.0
         }
     },
     {
@@ -674,9 +674,9 @@
             "overview": "Curso sobre Scrum y metodologías ágiles desde cero hasta avanzado.",
             "created_at": "2025-07-08",
             "image": "https://import.cdn.thinkific.com/643563/a51yLvxNTUiTs5FbiBsx_COVER-DEVTALLES2.jpeg",
-            "level": "",
-            "rating": 0.0,
-            "duration": 0.0
+            "level": "Principiante",
+            "rating": 4.8,
+            "duration": 4.5
         }
     }
 ]
