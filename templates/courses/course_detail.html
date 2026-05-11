@@ -25,20 +25,22 @@
                     <div class="course-sections">
                         <h2>Contenido del curso</h2>
                         <div class="accordion">
-                            {% for section in course.course_content %}
+                            {% for module in modules %}
                                 <div class="accordion-item">
-                                    <button class="accordion-header">{{section.id}}. {{section.name}}</button>
+                                    <button class="accordion-header">{{forloop.counter}}. {{module.title}}</button>
                                     <div class="accordion-content">
                                         <ul>
-                                            {% for lesson in section.lessons %}
-                                                <li> 
-                                                    {% if lesson.type == 'video' %}
+                                            {% for module_content in module.contents.all %}
+                                                <li>
+                                                    {% if module_content.content_type.model == 'video' %}
                                                         <i class="fa-solid fa-video"></i>
                                                     {% else %}
                                                         <i class="fa-solid fa-file"></i>
                                                     {% endif %}
-                                                    {{lesson.name}}
+                                                    {{ module_content.item.title }}
                                                 </li>
+                                            {% empty %}
+                                                <p>No hay contenido disponible</p>
                                             {% endfor %}
                                         </ul>
                                     </div>
