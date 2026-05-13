@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models.course import Course
+from .models.progress import Progress
 from django.db.models import Q
 from django.core.paginator import Paginator
 # Create your views here.
@@ -43,10 +44,18 @@ def course_detail(request, slug):
 
 def course_lessons(request, slug):
     course = get_object_or_404(Course, slug=slug)
-    course_title = course.title
     modules = course.modules.prefetch_related('contents')
+
+    course_progress = 0
+    if request.user.is_authenticated:
+        progress_obj = Progress.objects.filter(
+            user=request.user, course=course).first()
+        if progress_obj:
+            course_progress = progress_obj.progress
+
     return render(request, 'courses/course_lessons.html',
                   {
-                      'course_title': course_title,
-                      'modules': modules
+                      'course_title': course.title,
+                      'modules': modules,
+                      'course_progress': course_progress
                   })

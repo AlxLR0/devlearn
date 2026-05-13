@@ -22,8 +22,8 @@
         <aside class="sidebar">
 
 
-            <h1 class="course-title">{{lesson.course_title}}</h1>
-            <p class="progress">{{lesson.progress}}% completado</p>
+            <h1 class="course-title">{{ course_title }}</h1>
+            <p class="progress">{{ course_progress }}% completado</p>
 
 
             <input class="lesson-search" placeholder="Buscar...">
@@ -32,18 +32,23 @@
 
             <!-- SECCIONES -->
             <div class="accordion">
-                {% for section in lesson.course_content %}
+                {% for module in modules %}
                     <div class="accordion-item">
-                        <button class="accordion-header">{{section.id}} {{section.name}} <span>{{section.complete_lessons}} / {{section.total_lessons}}</span></button>
+                        <button class="accordion-header">{{ forloop.counter }}. {{ module.title }} <span>{{module.complete_lessons}}/{{module.contents.count}}</span></button>
                         <div class="accordion-content">
                             <ul>
-                                {% for lesson in section.lessons %}
-                                    <li>{{lesson.name}}</li>
+                                {% for content in module.contents.all %}
+                                    <li>
+                                        {% if content.item %}
+                                            {{ content.item.title }}
+                                        {% else %}
+                                            (Sin título)
+                                        {% endif %}
+                                    </li>
                                 {% endfor %}
                             </ul>
                         </div>
                     </div>
-                
                 {% endfor %}
                 {% comment %} <div class="accordion-item">
                     <button class="accordion-header">Sección 2: Fundamentos necesarios de Python <span>0 /
