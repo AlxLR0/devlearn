@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -127,3 +128,7 @@ STATICFILES_DIRS = [
 #esto sirve para decirle a django que use nuestro modelo de usuario personalizado en vez del predeterminado
 #sin esto, django no sabra que modelo usar para las migraciones y dara error al hacer makemigrations o al registrarse un usuario
 AUTH_USER_MODEL = 'profiles.User'
+
+
+LOGIN_REDIRECT_URL = 'course_list'
+LOGOUT_REDIRECT_URL = 'login'

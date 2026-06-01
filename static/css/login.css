@@ -13,6 +13,13 @@ body {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
 }
 
+.login-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1.5rem;
+}
+
 .login-title {
     font-size: 1.8rem;
     text-align: center;
