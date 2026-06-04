@@ -1,0 +1,173 @@
+{% extends 'includes/base.html' %}
+{% block title %}Contenidos del módulo - {{ module.title }}{% endblock title %}
+{% load static %}
+
+{% block custom_styles %}
+<link rel="stylesheet" href="{% static 'css/styles.css'%}">
+<link rel="stylesheet" href="{% static 'css/instructor_styles.css'%}">
+<style>
+    .content-item {
+        background: white;
+        padding: 1.25rem 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        margin-bottom: 0.75rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-left: 4px solid #4b5563;
+    }
+    .content-info {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .content-icon {
+        font-size: 1.5rem;
+        color: #4b5563;
+    }
+    .content-actions {
+        display: flex;
+        gap: 1rem;
+    }
+    .content-actions a {
+        text-decoration: none;
+        color: #4b5563;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+    .content-actions a:hover {
+        color: #1e1b4b;
+    }
+    .content-actions a.delete-link:hover {
+        color: #ef4444;
+    }
+    .add-content-bar {
+        background: #e0e7ff;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+        border: 1px dashed #6366f1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    .add-buttons-group {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+    }
+    .btn-add-type {
+        text-decoration: none;
+        background-color: white;
+        color: #1e1b4b;
+        border: 1px solid #1e1b4b;
+        padding: 0.5rem 1rem;
+        border-radius: 0.375rem;
+        font-weight: bold;
+        font-size: 0.85rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        transition: all 0.2s;
+    }
+    .btn-add-type:hover {
+        background-color: #1e1b4b;
+        color: white;
+    }
+</style>
+{% endblock custom_styles %}
+
+{% block content %}
+<div class="layout">
+    {% include 'includes/sidebar_instructor.html' %}
+    <div class="main-content">
+        {% include 'includes/header_instructor.html' %}
+
+        <main style="padding: 2rem; max-width: 1000px; margin: 0 auto; width: 100%;">
+            
+            <div style="margin-bottom: 2rem;">
+                <a href="{% url 'instructor:module_list' module.course.id %}" style="text-decoration: none; color: #4b5563; font-weight: bold; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.25rem;">
+                    <i class="fa-solid fa-arrow-left"></i> Volver a módulos
+                </a>
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <h2 style="font-size: 1.75rem; color: #1e1e1e; margin-bottom: 0.5rem;">Contenidos del módulo</h2>
+                <h4 style="color: #6b7280; font-weight: 500; font-size: 1.1rem;">
+                    Curso: {{ module.course.title }} / Módulo: {{ module.title }}
+                </h4>
+            </div>
+
+            <!-- Barra para añadir contenidos -->
+            <div class="add-content-bar">
+                <span style="font-weight: 600; color: #3730a3; font-size: 1rem;">
+                    <i class="fa-solid fa-circle-plus"></i> Añadir nueva lección / contenido:
+                </span>
+                <div class="add-buttons-group">
+                    <a href="{% url 'instructor:content_add' module.id 'text' %}" class="btn-add-type">
+                        <i class="fa-solid fa-file-signature"></i> Texto
+                    </a>
+                    <a href="{% url 'instructor:content_add' module.id 'image' %}" class="btn-add-type">
+                        <i class="fa-solid fa-image"></i> Imagen
+                    </a>
+                    <a href="{% url 'instructor:content_add' module.id 'video' %}" class="btn-add-type">
+                        <i class="fa-solid fa-video"></i> Video
+                    </a>
+                    <a href="{% url 'instructor:content_add' module.id 'file' %}" class="btn-add-type">
+                        <i class="fa-solid fa-paperclip"></i> Archivo / PDF
+                    </a>
+                </div>
+            </div>
+
+            <!-- Lista de contenidos -->
+            <div id="contents-list">
+                {% for content in contents %}
+                    <div class="content-item" data-id="{{ content.id }}">
+                        <div class="content-info">
+                            <span class="content-icon">
+                                {% if content.content_type.model == 'text' %}
+                                    <i class="fa-solid fa-file-signature" title="Texto"></i>
+                                {% elif content.content_type.model == 'image' %}
+                                    <i class="fa-solid fa-image" title="Imagen"></i>
+                                {% elif content.content_type.model == 'video' %}
+                                    <i class="fa-solid fa-video" title="Video"></i>
+                                {% elif content.content_type.model == 'file' %}
+                                    <i class="fa-solid fa-paperclip" title="Archivo"></i>
+                                {% endif %}
+                            </span>
+                            <div>
+                                <h3 style="font-size: 1.1rem; color: #1e1e1e; margin-bottom: 0.15rem;">
+                                    {{ forloop.counter }}. {{ content.item.title }}
+                                </h3>
+                                <span style="font-size: 0.8rem; background: #e5e7eb; color: #4b5563; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: bold; text-transform: uppercase;">
+                                    {{ content.content_type.model }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="content-actions">
+                            <a href="{% url 'instructor:content_edit' module.id content.item.id content.content_type.model %}">
+                                <i class="fa-solid fa-pen-to-square"></i> Editar
+                            </a>
+                            <a href="{% url 'instructor:content_delete' content.id %}" class="delete-link">
+                                <i class="fa-solid fa-trash"></i> Eliminar
+                            </a>
+                        </div>
+                    </div>
+                {% empty %}
+                    <div style="background: white; padding: 3rem; text-align: center; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                        <div style="font-size: 3rem; color: #d1d5db; margin-bottom: 1rem;">
+                            <i class="fa-solid fa-file-circle-question"></i>
+                        </div>
+                        <h3 style="color: #4b5563; margin-bottom: 0.5rem;">No hay contenidos en este módulo</h3>
+                        <p style="color: #9ca3af;">Utiliza los botones de arriba para añadir texto, imágenes, videos o PDFs.</p>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </main>
+    </div>
+</div>
+{% endblock content %}
