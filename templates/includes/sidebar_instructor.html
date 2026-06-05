@@ -5,7 +5,7 @@
     </div>
     <ul class="menu">
         
-        <li><a class="menu-option" href="{% url 'instructor:course_list' %}"><i class="fa-solid fa-person-chalkboard"></i><span>Cursos</span></a></li>
+        <li><a class="menu-option" href="{% url 'instructor:course_list' %}"><i class="fa-solid fa-person-chalkboard icon"></i><span>Cursos</span></a></li>
         <li><a class="menu-option" href="{% url 'student:course_list' %}"><i
                     class="fa-solid fa-chalkboard-user icon"></i><span>Estudiante</span></a></li>
 
@@ -18,10 +18,9 @@
         <li>
             <form class="form-logout" action="{% url 'logout' %}" method="post">
                 {% csrf_token %}
-                <button class="btn-logout" type="submit">
-                    <i class="fa-solid fa-power-off"></i>
+                <button class="menu-option btn-logout" type="submit">
+                    <i class="fa-solid fa-power-off icon"></i><span>Cerrar sesión</span>
                 </button>
-
             </form>
         </li>
     </ul>

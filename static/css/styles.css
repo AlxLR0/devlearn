@@ -47,12 +47,11 @@ body {
     display: inline;
 }
 
-.menu .menu-option {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.bottom-menu a {
+.menu .menu-option,
+.bottom-menu .menu-option {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     color: #ffffff;
     text-decoration: none;
 }
@@ -82,16 +81,29 @@ body {
     font-size: 1.2rem;
 }
 
+.btn-logout {
+    all: unset;
+    cursor: pointer;
+    width: 100%;
+}
+
+.form-logout {
+    display: contents;
+}
+
 .menu li a span,
-.bottom-menu li span {
+.bottom-menu li span,
+.btn-logout span {
     display: none;
 }
 
-.sidebar:hover li a {
+.sidebar:hover li a,
+.sidebar:hover li .btn-logout {
     display: flex;
 }
 
-.sidebar:hover li a span {
+.sidebar:hover li a span,
+.sidebar:hover li .btn-logout span {
     display: inline;
     padding-left: 12px;
 }
@@ -588,7 +600,8 @@ a.btn {
 
     .menu li a span,
     .bottom-menu li span,
-    .bottom-menu li a {
+    .bottom-menu li a,
+    .btn-logout span {
         display: flex;
         gap: 10px;
     }
