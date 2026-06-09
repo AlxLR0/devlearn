@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from .models import User, InstructorProfile
+from .models import User, InstructorProfile, Profile
 
 # Register your models here.
 
@@ -14,5 +14,9 @@ class UserAdmin(BaseUserAdmin):
         (None, {'fields':('is_instructor',)}),
     )
     
+@admin.register(Profile)
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ('user', 'company', 'profession', 'timezone', 'photo')
+
 
 admin.site.register(InstructorProfile)

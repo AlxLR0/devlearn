@@ -1,13 +1,9 @@
 {
+    "$schema": "vscode://schemas/settings/folder",
     "python.defaultInterpreterPath": "${workspaceFolder}\\venv\\Scripts\\python.exe",
     "python.analysis.extraPaths": [
         "${workspaceFolder}\\apps"
     ],
     "python.analysis.autoImportCompletions": true,
-    "python.analysis.typeCheckingMode": "basic",
-    "[django-html]": {
-        "editor.defaultFormatter": "monosans.djlint"
-    },
-    "djlint.enableLinting": true,
-    "djlint.profile": "django"
+    "python.analysis.typeCheckingMode": "basic"
 }

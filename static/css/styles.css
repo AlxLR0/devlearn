@@ -65,7 +65,7 @@ body {
 .bottom-menu li {
     display: flex;
     align-items: center;
-    padding: 1rem;
+    padding: 1rem 0.5rem 1rem 0;
     gap: 1rem;
     position: relative;
     cursor: pointer;
@@ -79,6 +79,8 @@ body {
 
 .icon {
     font-size: 1.2rem;
+    width: 1.2rem;
+    text-align: center;
 }
 
 .btn-logout {
@@ -660,4 +662,135 @@ a.btn {
 
 .paginator {
     text-align: center;
+}
+
+/* === ALERTS / MESSAGES === */
+.messages-container {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 420px;
+    width: 100%;
+}
+
+.alert {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 1.2rem;
+    border-radius: 10px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    animation: alertSlideIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.alert-icon {
+    font-size: 1.15rem;
+    flex-shrink: 0;
+}
+
+.alert-text {
+    flex: 1;
+}
+
+.alert-close {
+    all: unset;
+    cursor: pointer;
+    font-size: 0.85rem;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+    flex-shrink: 0;
+    padding: 4px;
+}
+
+.alert-close:hover {
+    opacity: 1;
+}
+
+/* Success */
+.alert-success {
+    background: linear-gradient(135deg, #0d3320, #164a30);
+    color: #6ee7a0;
+    border-color: rgba(110, 231, 160, 0.2);
+}
+
+.alert-success .alert-icon {
+    color: #34d399;
+}
+
+/* Error */
+.alert-error {
+    background: linear-gradient(135deg, #3b1219, #4a1c24);
+    color: #fca5a5;
+    border-color: rgba(252, 165, 165, 0.2);
+}
+
+.alert-error .alert-icon {
+    color: #f87171;
+}
+
+/* Warning */
+.alert-warning {
+    background: linear-gradient(135deg, #3b2e0a, #4a3a12);
+    color: #fde68a;
+    border-color: rgba(253, 230, 138, 0.2);
+}
+
+.alert-warning .alert-icon {
+    color: #fbbf24;
+}
+
+/* Info */
+.alert-info {
+    background: linear-gradient(135deg, #0c2340, #153456);
+    color: #93c5fd;
+    border-color: rgba(147, 197, 253, 0.2);
+}
+
+.alert-info .alert-icon {
+    color: #60a5fa;
+}
+
+/* Slide-in animation */
+@keyframes alertSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(40px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+/* Fade-out animation for auto-dismiss */
+.alert.alert-fade-out {
+    animation: alertFadeOut 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes alertFadeOut {
+    0% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(40px) scale(0.95);
+    }
+}
+
+@media (max-width: 480px) {
+    .messages-container {
+        top: 1rem;
+        right: 1rem;
+        left: 1rem;
+        max-width: none;
+    }
 }

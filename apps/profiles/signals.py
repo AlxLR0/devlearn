@@ -1,6 +1,10 @@
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.conf import settings
+from .models import InstructorProfile, Profile
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 from .models import InstructorProfile
 
@@ -8,4 +12,15 @@ from .models import InstructorProfile
 def create_instructor_profile(sender, instance, created, **kwargs):
     if created and instance.is_instructor:
         InstructorProfile.objects.create(user=instance)
+
+@receiver(post_save, sender=User)
+def create_or_update_instructor_profile(sender, instance, created, **kwargs):
+    if instance.is_instructor:
+        if created:
+            InstructorProfile.objects.create(user=instance)
+        
+        instance.instructorprofile.save()
+
+
+
         

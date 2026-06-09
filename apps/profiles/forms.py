@@ -10,6 +10,10 @@ TIMEZONE_CHOICES = [
 ]
 
 class ProfileForm(forms.ModelForm):
+    email = forms.EmailField(label='Correo electrónico')
+    first_name = forms.CharField(label='Nombre')
+    last_name = forms.CharField(label='Apellido')
+
     class Meta:
         model = Profile
         fields = ['company', 'profession', 'timezone', 'photo']
