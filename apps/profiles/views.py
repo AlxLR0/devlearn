@@ -1,10 +1,13 @@
+from django.contrib.auth import login
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView , CreateView
 from .models import Profile
-from .forms import ProfileForm
+from .forms import ProfileForm, CustomRegisterForm
 from django.urls import reverse_lazy
 from django.contrib import messages
+from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import redirect
 
 # Create your views here.
 def index(request):
@@ -33,6 +36,16 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
     def form_valid(self, form):
         messages.success(self.request,'Tu perfil se ha actualizado correctamente!')
         return super().form_valid(form)
+
+class RegisterView(CreateView):
+    form_class = CustomRegisterForm
+    template_name = 'registration/register.html'
+    success_url = reverse_lazy('student:course_list')
+
+    def form_valid(self, form):
+        user = form.save()
+        login(self.request, user)
+        return redirect(self.success_url)
     
     
 

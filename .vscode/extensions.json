@@ -1,3 +1,6 @@
 {
-    "recommendations": []
+    "recommendations": [
+        "batisteo.vscode-django",
+        "monosans.djlint"
+    ]
 }

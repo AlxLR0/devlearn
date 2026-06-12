@@ -5,5 +5,16 @@
         "${workspaceFolder}\\apps"
     ],
     "python.analysis.autoImportCompletions": true,
-    "python.analysis.typeCheckingMode": "basic"
+    "python.analysis.typeCheckingMode": "basic",
+    "files.associations": {
+        "**/templates/**/*.html": "django-html",
+        "**/templates/**/*.htm": "django-html"
+    },
+    "emmet.includeLanguages": {
+        "django-html": "html"
+    },
+    "[django-html]": {
+        "editor.defaultFormatter": "monosans.djlint"
+    },
+    "djlint.enableLinting": true
 }

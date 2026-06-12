@@ -6,20 +6,15 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
-from .models import InstructorProfile
-
-@receiver(post_save, sender=settings.AUTH_USER_MODEL)
-def create_instructor_profile(sender, instance, created, **kwargs):
-    if created and instance.is_instructor:
-        InstructorProfile.objects.create(user=instance)
+@receiver(post_save, sender=User)
+def create_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.get_or_create(user=instance)
 
 @receiver(post_save, sender=User)
 def create_or_update_instructor_profile(sender, instance, created, **kwargs):
     if instance.is_instructor:
-        if created:
-            InstructorProfile.objects.create(user=instance)
-        
-        instance.instructorprofile.save()
+        InstructorProfile.objects.get_or_create(user=instance)
 
 
 

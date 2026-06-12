@@ -19,5 +19,13 @@
                 </li>
                 <li><a class="menu-option" href="#"><i class="fa-solid fa-gear icon"></i><span>Configuración</span></a>
                 </li>
+                <li>
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button class="btn-logout" type="submit">
+                    <i class="fa-solid fa-power-off"></i><span>Cerrar sesión</span> 
+                </button>
+
+            </form>
             </ul>
         </div>
