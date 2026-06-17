@@ -1,6 +1,8 @@
 from django.contrib.auth import login
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.views import PasswordChangeView
+from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic.edit import UpdateView , CreateView
 from .models import Profile
 from .forms import ProfileForm, CustomRegisterForm
@@ -47,6 +49,9 @@ class RegisterView(CreateView):
         login(self.request, user)
         return redirect(self.success_url)
     
-    
+class CustomPasswordChangeView(LoginRequiredMixin,SuccessMessageMixin,PasswordChangeView):
+    template_name = 'settings/change_password.html'
+    success_message = "Tu contraseña ha sido cambiada correctamente"
+    success_url = reverse_lazy('change_password')
 
     

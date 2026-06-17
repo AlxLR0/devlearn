@@ -12,6 +12,17 @@
     <h2 class="login-title">Iniciar sesión</h2>
     <form method='post' class="login-form">
         {% csrf_token %}
+
+        {% if form.non_field_errors %}
+            <div class="error-messages">
+                
+                {% for error in form.non_field_errors  %}
+                    <p class="error">{{ error }}</p>
+                {% endfor %}
+                    
+            </div>
+        {% endif %}
+
         <div class="form-group">
             {{ form.username.label_tag }}
             {{ form.username }}

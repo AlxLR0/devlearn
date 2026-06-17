@@ -65,11 +65,18 @@ body {
 .bottom-menu li {
     display: flex;
     align-items: center;
-    padding: 1rem 0.5rem 1rem 0;
+    justify-content: end;
+    padding: 1rem 0.5rem;
     gap: 1rem;
     position: relative;
     cursor: pointer;
     transition: background 0.2s;
+}
+
+.sidebar:hover .menu li,
+.sidebar:hover .bottom-menu li {
+    justify-content: flex-start;
+    padding-left: 1rem;
 }
 
 .menu li:hover,
@@ -79,8 +86,9 @@ body {
 
 .icon {
     font-size: 1.2rem;
-    width: 1.2rem;
+    min-width: 1.4rem;
     text-align: center;
+    flex-shrink: 0;
 }
 
 .btn-logout {
@@ -764,6 +772,7 @@ a.btn {
         opacity: 0;
         transform: translateX(40px) scale(0.95);
     }
+
     100% {
         opacity: 1;
         transform: translateX(0) scale(1);
@@ -780,6 +789,7 @@ a.btn {
         opacity: 1;
         transform: translateX(0) scale(1);
     }
+
     100% {
         opacity: 0;
         transform: translateX(40px) scale(0.95);
@@ -793,4 +803,221 @@ a.btn {
         left: 1rem;
         max-width: none;
     }
+}
+
+
+
+.settings-form p {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0px;
+}
+
+.settings-form p input {
+    width: 50%;
+    border: 1px solid #000;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+.settings-form ul {
+    list-style: none;
+    font-size: 12px;
+    color: #555;
+}
+
+.settings-form p span.helptext {
+    font-size: 12px;
+    color: #555;
+}
+
+.settings-form ul.errorlist li {
+    color: #e61919
+}
+
+.form-support,
+.form-support .form-group {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.form-support .form-group input,
+.form-support .form-group textarea {
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin: 5px 0px;
+    border: 1px solid #777;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-buttons a {
+    padding: 8px 16px;
+    border-radius: 6px;
+    background-color: #f0f0f0;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.filter-buttons a:hover {
+    background-color: #ddd;
+}
+
+.filter-buttons a.active {
+    background-color: #333;
+    color: #fff;
+}
+
+.paginator {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.page-btn,
+.page-info {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.page-btn {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 8px;
+    background-color: #f3f4f6;
+    color: #374151;
+    text-decoration: none;
+    border: 1px solid #e5e7eb;
+}
+
+.page-btn:hover {
+    background-color: #e5e7eb;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.page-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.page-btn.disabled,
+.page-btn[aria-disabled="true"] {
+    background-color: #f9fafb;
+    color: #9ca3af;
+    border-color: #f3f4f6;
+    pointer-events: none;
+    box-shadow: none;
+}
+
+.page-info {
+    padding: 8px 12px;
+    color: #4b5563;
+    background-color: #fff;
+    border: 1px dashed #e5e7eb;
+    border-radius: 8px;
+}
+
+.course-reviews {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: .75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    font-family: system-ui, sans-serif;
+}
+
+.course-reviews h3 {
+    margin-top: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: .5rem;
+}
+
+.rating-stats {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.rating-stats p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.rating-stats .stars {
+    font-size: 1.25rem;
+    color: #f5b301;
+    /* amarillo dorado para estrellas llenas */
+}
+
+.rating-stats .stars:empty {
+    color: #ccc;
+}
+
+.reviews {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+}
+
+.review {
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.review:last-child {
+    border-bottom: none;
+}
+
+.review-head {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    gap: .5rem;
+    flex-wrap: wrap;
+}
+
+.review-head strong {
+    font-weight: 600;
+    color: #111;
+}
+
+.review-stars {
+    font-size: 1rem;
+    color: #f5b301;
+}
+
+.review-head small {
+    color: #888;
+    font-size: .875rem;
+}
+
+.review p {
+    margin: .5rem 0 0;
+    line-height: 1.4;
+    color: #444;
+}
+
+.dashboard-course .course-card .course-card__image {
+    width: 70%;
+}
+
+.profile-info p {
+    font-weight: 600;
+    font-size: 18px;
+    padding: 5px 0px;
 }
