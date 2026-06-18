@@ -51,6 +51,17 @@
                 <!-- === COURSE CARDS === -->
 
                 <div class="carousel-wrapper">
+                    <div class="filter-buttons">
+                        <a href="?filter=all{% if query %}&q={{ query }}{% endif %}" class="{% if filter_type == 'all' %}active{% endif %}">
+                            Todos
+                        </a>
+                        <a href="?filter=enrolled{% if query %}&q={{ query }}{% endif %}" class="{% if filter_type == 'enrolled' %}active{% endif %}">
+                            Inscritos
+                        </a>
+                        <a href="?filter=not_enrolled{% if query %}&q={{ query }}{% endif %}" class="{% if filter_type == 'not_enrolled' %}active{% endif %}">
+                            No inscritos
+                        </a>
+                    </div>
                     <div class="course-grid">
                         
                             <!-- Card 1 -->
