@@ -51,11 +51,15 @@ def course_list(request):
 def course_detail(request, slug):
     course = get_object_or_404(Course, slug=slug)
     modules = course.modules.prefetch_related('contents').order_by('order')
+
+    is_enrolled = Enrollment.objects.filter(user=request.user, course=course).exists()
+
     total_contents = sum(module.contents.count() for module in modules)
     return render(request, 'courses/course_detail.html', {
         'course': course,
         'modules': modules,
-        'total_contents': total_contents
+        'total_contents': total_contents,
+        'is_enrolled': is_enrolled
     })
 
 
