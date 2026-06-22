@@ -4,9 +4,13 @@ from ..models.enrollment import Enrollment
 from ..models.progress_tracking import CompletedContent
 from ..models.content import Content
 from ..models.progress import Progress
+from ..models.review import Review
 from django.db.models import Q
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from ..forms import ReviewForm
+from django.db.models import Avg, Count, F, Value
 
 # Create your views here.
 
@@ -124,3 +128,52 @@ def mark_complete(request, content_id):
                         content_id=next_content.id)
 
     return redirect('student:course_lessons', slug=content.module.course.slug)
+
+def user_is_enrolled(user, course: Course)->bool:
+    is_enrolled = Enrollment.objects.filter(user=user, course=course).exists()
+    return is_enrolled or user.is_staff 
+
+def review_course(request, slug):
+    course = get_object_or_404(Course, slug=slug)
+
+    if not user_is_enrolled(request.user, course):
+        messages.error(request, "No estas inscrito en este curso.")
+        return redirect('student:course_detail', slug=course.slug)
+
+    try:
+        instance = Review.objects.get(user=request.user, course=course) 
+        is_update = True
+    except Review.DoesNotExist:
+        instance = None
+        is_update = False
+    
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=instance)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.user = request.user
+            review.course = course
+            review.save()
+            review = (
+                Review.objects.filter(course=course).select_related('user').order_by('-created_at')
+            )
+            stats = review.aggregate(
+                average_rating=Avg('rating'),
+                total_count=Count('id')
+            )
+            course.rating = stats['average_rating']
+            course.save()
+
+            message = 'Tu reseña ha sido guardada.' if not is_update else 'Reseña actualizada'
+            messages.success(request, message)
+
+            return redirect('student:course_detail', slug=course.slug)
+            
+    else:
+        form = ReviewForm(instance=instance)
+    
+    return render(request, 'courses/review_course.html', {
+        'is_update': is_update,  
+        'form': form,
+        'course': course
+        })

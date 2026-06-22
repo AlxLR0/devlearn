@@ -14,5 +14,7 @@ urlpatterns = [
     path("<str:slug>/lessons/",
          student.course_lessons, name="course_lessons"),
     path('content/<int:content_id>/complete/',
-         student.mark_complete, name="mark_complete")
+         student.mark_complete, name="mark_complete"),
+    path("<str:slug>/review/",
+         student.review_course, name="review_course")
 ]

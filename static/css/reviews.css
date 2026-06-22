@@ -1,0 +1,300 @@
+/* ───────────────────────────────────────────
+   Reviews – Premium Redesign
+─────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ── Layout container ── */
+.container {
+    max-width: 680px;
+    margin: 2.5rem auto;
+    padding: 1.25rem 1.5rem;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* ── Page title ── */
+.container h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1.75rem;
+    position: relative;
+    padding-bottom: .6rem;
+}
+
+.container h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 3rem;
+    height: 3px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #6366f1, #a855f7);
+}
+
+/* ── Review form card ── */
+.review-form {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 1.25rem;
+    padding: 2rem 2.25rem;
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, .06),
+        0 10px 24px -4px rgba(99, 102, 241, .08);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 10px 0px;
+}
+
+.review-form div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Stars section ── */
+.stars-radio {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+.stars-radio>label {
+    font-size: .8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: #64748b;
+}
+
+.stars-inline {
+    display: flex;
+    gap: .5rem;
+    margin: .25rem 0 1rem;
+}
+
+.star-option input {
+    display: none;
+}
+
+.star-text {
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.star-option input:checked+.star-text {
+    transform: scale(1.05);
+}
+
+/* ── Interactive star rating fieldset ── */
+.star-rating {
+    border: 0;
+    padding: .25rem 0;
+    gap: .25rem;
+    direction: rtl;
+    text-align: end;
+    /* pinta desde la estrella 5 hacia la 1 */
+}
+
+.star-rating input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.star-rating label {
+    font-size: 2.4rem;
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+    transition:
+        transform .15s cubic-bezier(.34, 1.56, .64, 1),
+        color .12s ease,
+        filter .12s ease;
+    color: #cbd5e1;
+    filter: drop-shadow(0 0 0px transparent);
+}
+
+.star-rating label:hover,
+.star-rating label:hover~label {
+    color: #f59e0b;
+    filter: drop-shadow(0 0 6px rgba(245, 158, 11, .45));
+    /* hover */
+}
+
+.star-rating input:checked~label {
+    color: #f59e0b;
+    filter: drop-shadow(0 0 4px rgba(245, 158, 11, .35));
+    /* seleccionadas */
+}
+
+.star-rating label:hover,
+.star-rating input:focus+label {
+    transform: scale(1.18);
+}
+
+/* ── Textarea / comment field ── */
+.field label {
+    font-size: .8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: #64748b;
+    margin-bottom: .5rem;
+}
+
+.field textarea,
+.review-form textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: .75rem 1rem;
+    border: 1.5px solid #e2e8f0;
+    border-radius: .75rem;
+    font-family: inherit;
+    font-size: .95rem;
+    color: #1e293b;
+    background: #f8fafc;
+    resize: vertical;
+    transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.field textarea:focus,
+.review-form textarea:focus {
+    border-color: #6366f1;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, .15);
+}
+
+/* ── Form actions row ── */
+.review-form-actions {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    flex-wrap: wrap;
+}
+
+/* ── Buttons ── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .6rem 1.3rem;
+    border-radius: .6rem;
+    border: 1.5px solid #e2e8f0;
+    font-family: inherit;
+    font-size: .9rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        background .18s ease,
+        color .18s ease,
+        border-color .18s ease,
+        box-shadow .18s ease,
+        transform .12s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #6366f1 0%, #7c3aed 100%);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 4px 14px rgba(99, 102, 241, .35);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #4f46e5 0%, #6d28d9 100%);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, .45);
+}
+
+.btn-secondary {
+    width: auto;
+    background-color: #f1f5f9;
+    color: #475569;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .6rem 1.3rem;
+    border-radius: .6rem;
+    border: 1.5px solid #e2e8f0;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: .9rem;
+    font-weight: 600;
+    margin: 10px 0px;
+    cursor: pointer;
+    transition:
+        background .18s ease,
+        color .18s ease,
+        transform .12s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #e2e8f0;
+    color: #1e293b;
+    transform: translateY(-1px);
+}
+
+/* Back link (plain anchor in the form) */
+.review-form a:not(.btn) {
+    font-size: .875rem;
+    font-weight: 500;
+    color: #6366f1;
+    text-decoration: none;
+    transition: color .15s ease, text-decoration .15s ease;
+}
+
+.review-form a:not(.btn):hover {
+    color: #4f46e5;
+    text-decoration: underline;
+}
+
+.btn+.btn {
+    margin-left: .5rem;
+}
+
+/* ── Review list items ── */
+.review {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #f1f5f9;
+    border-radius: .75rem;
+    transition: background .15s ease;
+}
+
+.review:hover {
+    background: #f8fafc;
+}
+
+.review-head {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.review-stars {
+    margin-left: auto;
+    font-size: 1.05rem;
+    filter: drop-shadow(0 0 2px rgba(245, 158, 11, .3));
+}
+
+/* ── Error messages ── */
+.err {
+    color: #dc2626;
+    font-size: .8rem;
+    font-weight: 500;
+    margin-top: .35rem;
+    padding: .35rem .6rem;
+    background: #fef2f2;
+    border-left: 3px solid #dc2626;
+    border-radius: 0 .4rem .4rem 0;
+}
