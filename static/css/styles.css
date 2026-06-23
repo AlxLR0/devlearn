@@ -1021,3 +1021,13 @@ a.btn {
     font-size: 18px;
     padding: 5px 0px;
 }
+
+.dashboard-course .course-card .course-card__image {
+    width: 70%;
+}
+
+.profile-info p {
+    font-weight: 600;
+    font-size: 18px;
+    padding: 5px 0px;
+}

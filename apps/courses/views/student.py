@@ -58,12 +58,21 @@ def course_detail(request, slug):
 
     is_enrolled = Enrollment.objects.filter(user=request.user, course=course).exists()
 
+    reviews = (Review.objects.filter(course=course).select_related('user').order_by('-created_at'))
+    stats = reviews.aggregate(
+        avg = Avg('rating'),
+        total = Count('id')
+    )
+    
+
     total_contents = sum(module.contents.count() for module in modules)
     return render(request, 'courses/course_detail.html', {
         'course': course,
         'modules': modules,
         'total_contents': total_contents,
-        'is_enrolled': is_enrolled
+        'is_enrolled': is_enrolled,
+        'reviews': reviews,
+        'stats': stats
     })
 
 
