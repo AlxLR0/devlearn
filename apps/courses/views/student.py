@@ -82,6 +82,13 @@ def course_lessons(request, slug, content_id=None):
     course_title = course.title
     modules = course.modules.prefetch_related('contents').order_by('order')
 
+    request.session['last_course_slug'] = course.slug
+    request.session['last_course_title'] = course.title
+    request.session['last_course_image'] = course.image
+
+    request.session.modified = True
+    
+
     # Enrollment
     Enrollment.objects.get_or_create(user=request.user, course=course)
 
