@@ -17,6 +17,7 @@ from dotenv import load_dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Cargamos variables de entorno desde .env (como emails y config sensible) 🔐
 load_dotenv(BASE_DIR/'.env')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
@@ -32,6 +33,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# Aquí registramos nuestras apps para que Django las reconozca 🧩
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,10 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.dashboard',
-    'apps.courses',
-    'apps.profiles',
-    'apps.support',
+    'apps.dashboard',   # Dashboard principal del usuario 🏠
+    'apps.courses',     # Lógica de cursos, módulos y contenidos 📚
+    'apps.profiles',    # Perfiles de usuario, instructor y student 🧑‍🎓
+    'apps.support',     # Sistema de soporte/contacto por correo 📧
 ]
 
 MIDDLEWARE = [
@@ -57,11 +59,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'devlearn.urls'
 
+# Config de plantillas (templates) 🎨
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [ 
-            BASE_DIR / 'templates'
+            BASE_DIR / 'templates'  # Carpeta global de templates 📁
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -69,6 +72,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # Context processor personalizado: mete la foto de perfil en TODAS las vistas 🖼️
+                # Viene de apps/profiles/context_processors.py
                 'apps.profiles.context_processors.profile_picture',
             ],
         },
@@ -81,6 +86,7 @@ WSGI_APPLICATION = 'devlearn.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+# Base de datos SQLite (local, archivo db.sqlite3) 🗄️
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -92,6 +98,7 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
 
+# Validadores de contraseña (seguridad básica de Django) 🔒
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -111,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
-LANGUAGE_CODE = 'es-mx'
+LANGUAGE_CODE = 'es-mx'  # Idioma: Español (México) 🌎
 
 TIME_ZONE = 'UTC'
 
@@ -125,22 +132,25 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'static'
+    BASE_DIR / 'static'  # Carpeta global de archivos estáticos 🎨
 ]
 
-#esto sirve para decirle a django que use nuestro modelo de usuario personalizado en vez del predeterminado
-#sin esto, django no sabra que modelo usar para las migraciones y dara error al hacer makemigrations o al registrarse un usuario
+# Le decimos a Django que use nuestro modelo de usuario personalizado en vez del predeterminado 👤
+# Sin esto, Django no sabrá qué modelo usar para las migraciones
+# El modelo lo definimos en apps/profiles/models/user.py
 AUTH_USER_MODEL = 'profiles.User'
 
+# URLs de autenticación 🔑
+LOGIN_URL = '/login/'                           # Si no has iniciado sesión, te manda aquí
+LOGIN_REDIRECT_URL = 'student:course_list'      # Después de login vas al listado de cursos
+LOGOUT_REDIRECT_URL = 'login'                   # Después de logout vuelves al login
 
-LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL = 'student:course_list'
-LOGOUT_REDIRECT_URL = 'login'
-
+# Archivos subidos por usuarios (imágenes de perfil, etc.) 🖼️
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-# Configuración de Correo para Soporte
+# Configuración de Correo para Soporte 📧
+# Todas estas variables se pueden sobreescribir en el archivo .env
 EMAIL_BACKEND = os.getenv('EMAIL_BACKEND', 'django.core.mail.backends.smtp.EmailBackend')
 EMAIL_HOST = os.getenv('EMAIL_HOST', '')
 EMAIL_PORT = int(os.getenv('EMAIL_PORT', '465'))
@@ -149,7 +159,5 @@ EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')
 EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', 'true').lower() == 'true'
 EMAIL_USE_SSL = os.getenv('EMAIL_USE_SSL', 'true').lower() == 'true' 
 DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'noreply@devlearn.com')
-SUPPORT_INBOX = os.getenv('SUPPORT_INBOX', 'soporte@devlearn.com')
+SUPPORT_INBOX = os.getenv('SUPPORT_INBOX', 'soporte@devlearn.com')  # Bandeja de soporte 📥
 EMAIL_TIMEOUT = 20
-
-

@@ -8,7 +8,7 @@ Function views
     1. Add an import:  from my_app import views
     2. Add a URL to urlpatterns:  path('', views.home, name='home')
 Class-based views
-    1. Add an import:  from other_app.views import Home
+    1. Add an import:  from my_app import views
     2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
@@ -19,23 +19,31 @@ from django.urls import path, include
 from django.contrib.auth.views import LoginView, LogoutView
 from django.conf import settings
 from django.conf.urls.static import static
+# RegisterView viene de apps/profiles/views.py, CustomPasswordChangeView también 👤
 from apps.profiles.views import RegisterView, CustomPasswordChangeView
 
+# Mapa maestro de URLs del proyecto 🗺️
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('instructor/', include(("apps.courses.urls.instructor", "instructor"), namespace="instructor")),
-    path('student/', include(("apps.courses.urls.student", "student"), namespace="student")),
-    path('dashboard/', include("apps.dashboard.urls")),
-    path('profile/', include("apps.profiles.urls")),
-    path('login/', LoginView.as_view(), name='login'),
-    path('logout/', LogoutView.as_view(), name='logout'),
-    path('register/', RegisterView.as_view(), name='register'),
-    path('settings/password/', CustomPasswordChangeView.as_view(), name='change_password'),
-    path('support/', include("apps.support.urls")),
+    path('admin/', admin.site.urls),                                             # Panel de administración de Django 🔧
+    path('instructor/', include(("apps.courses.urls.instructor", "instructor"), namespace="instructor")),  # Zona de instructores 👨‍🏫
+    path('student/', include(("apps.courses.urls.student", "student"), namespace="student")),              # Zona de estudiantes 🧑‍🎓
+    path('dashboard/', include("apps.dashboard.urls")),                         # Dashboard personal 🏠
+    path('profile/', include("apps.profiles.urls")),                            # Perfil de usuario 👤
+    path('login/', LoginView.as_view(), name='login'),                          # Inicio de sesión 🔑
+    path('logout/', LogoutView.as_view(), name='logout'),                       # Cerrar sesión 🚪
+    path('register/', RegisterView.as_view(), name='register'),                 # Registro de nuevo usuario ✍️
+    path('settings/password/', CustomPasswordChangeView.as_view(), name='change_password'),  # Cambiar contraseña 🔐
+    path('support/', include("apps.support.urls")),                             # Página de soporte/contacto 📧
     
 ]
 
 
+# ─────────────────────────────────────────────
+# 💡 SOLO en modo DEBUG (desarrollo), Django sirve los archivos multimedia directamente
+# ─────────────────────────────────────────────
+# Si settings.DEBUG es True -> agregamos rutas para servir imágenes subidas (media/)
+# Si settings.DEBUG es False (producción) -> NO se agregan, el servidor web (Nginx, etc.) las servirá
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
-    
+    # static() genera las URLs necesarias para acceder a los archivos en MEDIA_ROOT
+    # Ejemplo: si MEDIA_URL = '/media/', un archivo 'foto.jpg' se sirve en /media/foto.jpg
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
